@@ -45,7 +45,7 @@ public class playerMovement : MonoBehaviour
         }
         else
             lookDirection = new Vector3(lookX, lookY, 0).normalized;
-        if (moveDirection.magnitude < inputDeadZone)
+        if (new Vector3(moveX, moveY, 0).magnitude < inputDeadZone)
         {
             moveDirection = Vector3.zero;
         }
