@@ -87,16 +87,16 @@ public class DialogueManager : MonoBehaviour
         speaker.sprite = invisSprite;
     }
 
-    private void FreezePlayer()
-    {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        playerMovement.disabled = true;
-    }
+    //private void FreezePlayer()
+    //{
+    //    playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    //    playerMovement.disabled = true;
+    //}
 
-    private void UnFreezePlayer()
-    {
-        playerMovement.disabled = false;
-    }
+    //private void UnFreezePlayer()
+    //{
+    //    playerMovement.disabled = false;
+    //}
 
     public void StartDialogue(Queue<string> dialogue)
     {
@@ -104,10 +104,10 @@ public class DialogueManager : MonoBehaviour
         speaker.sprite = invisSprite; //Clear the speaker
         DialogueUI.SetActive(true);
         continueImage.SetActive(false);
-        if (freezePlayerOnDialogue)
-        {
-            FreezePlayer();
-        }
+        //if (freezePlayerOnDialogue)
+        //{
+        //    FreezePlayer();
+        //}
 
 
         // open the dialogue box
@@ -224,10 +224,10 @@ public class DialogueManager : MonoBehaviour
         cancelTyping = false;
         isTyping = false;
         // isOpen = false;
-        if (freezePlayerOnDialogue)
-        {
-            UnFreezePlayer();
-        }
+        //if (freezePlayerOnDialogue)
+        //{
+        //    UnFreezePlayer();
+        //}
         if (levelBool)
         {
             GameObject.FindObjectOfType<GameSceneManager>().LoadScene(levelIndex);
