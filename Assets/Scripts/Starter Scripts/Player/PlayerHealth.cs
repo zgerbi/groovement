@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.LowLevel;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(PlayerMovement))]
+//[RequireComponent(typeof(PlayerMovement))]
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("If you actually want to use a healthbar or not")]
     public bool useHealthBar = false;
 
-    private PlayerMovement playerMovement;
+    //private PlayerMovement playerMovement;
 
 
     [HideInInspector] public int index = 0; //for editor uses
@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
        SetUpHealth();
-       playerMovement = GetComponent<PlayerMovement>();
+       //playerMovement = GetComponent<PlayerMovement>();
     }
 
     public void SetUpHealth()
@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DecreaseHealth(int value)//This is the function to use if you want to decrease the player's health somewhere
     {
+        Debug.Log("Decreasing health");
         if (!useHealthBar)
         {
             SegmentedHealthDecrease(value);
@@ -176,18 +177,22 @@ public class PlayerHealth : MonoBehaviour
     //This is where we handle the place where the health is dealth with
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Player collided");
         Collider2D thisCollision = GetComponent<Collider2D>();
-        if (collision.otherCollider == thisCollision)
-        {
+        //changed from "otherCollider" to collider
+        //if (collision.otherCollider == thisCollision)
+        //{
+            Debug.Log("otherCollider == thisCollision");
             if (collision.gameObject.TryGetComponent(out Weapon weapon))
             {
+                Debug.Log("weapon is weapon");
                 if (weapon.alignmnent == Weapon.Alignment.Enemy ||
                     weapon.alignmnent == Weapon.Alignment.Environment)
                 {
                     DecreaseHealth(weapon.damageValue);
                     if (currentHealth == 0)
                     {
-                        playerMovement.TimeToDie();
+                        //playerMovement.TimeToDie();
                     }
                 }
             }
@@ -199,7 +204,7 @@ public class PlayerHealth : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
             }
-        }
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -215,7 +220,7 @@ public class PlayerHealth : MonoBehaviour
                     DecreaseHealth(weapon.damageValue);
                     if (currentHealth == 0)
                     {
-                        playerMovement.TimeToDie();
+                        //playerMovement.TimeToDie();
                     }
                 }
             }
