@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
 
     private Vector3 moveDirection;
     private Vector3 lookDirection;
+    private Vector3 lastLook;
     private float fire;
 
     // Update is called once per frame
@@ -43,11 +44,14 @@ public class playerMovement : MonoBehaviour
 
         moveDirection = new Vector3(moveX, moveY, 0);
         if (new Vector3(lookX, lookY, 0).magnitude < lookDeadZone)
-        { 
+        {
             lookDirection = Vector3.zero;
         }
         else
+        {
             lookDirection = new Vector3(lookX, lookY, 0).normalized;
+            lastLook = lookDirection;
+        }
         if (new Vector3(moveX, moveY, 0).magnitude < inputDeadZone)
         {
             moveDirection = Vector3.zero;
@@ -73,7 +77,17 @@ public class playerMovement : MonoBehaviour
     {
         if (fire == 1)
         {
-            PlayerAttack.Attack(lookDirection);
+            Debug.Log("Look Magnitude: " + lookDirection.magnitude);
+            Debug.Log("LastLook Magnitude: " + lastLook.magnitude);
+            if (lookDirection.magnitude >= 0.5)
+            {
+                Debug.Log("shooting in look direction");
+                PlayerAttack.Attack(lookDirection);
+            }
+            else
+            {
+                PlayerAttack.Attack(lastLook);
+            }
         }
     }
 }

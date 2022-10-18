@@ -9,12 +9,13 @@ public class PlayerAttack : MonoBehaviour
     public List<Weapon> weaponList;
     [Tooltip("This is the current weapon that the player is using")]
     public Weapon weapon;
-    private Vector2 lastKnownDirection;
+    private Vector3 lastKnownDirection;
     [Tooltip("The coolDown before you can attack again")]
     public float coolDown = 0.4f;
 
     private bool canAttack = true;
     public GameObject player;
+
 
     private void Start()
     {
@@ -71,8 +72,6 @@ public class PlayerAttack : MonoBehaviour
                 //    rb.AddForce(new Vector2(-1,0) * weapon.force);
                 //}
                 rb.AddForce(scale * weapon.force);
-                
-
 
             }
 
