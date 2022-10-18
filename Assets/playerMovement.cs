@@ -10,9 +10,11 @@ public class playerMovement : MonoBehaviour
     public GameObject reticle;
     public float inputDeadZone;
     public float lookDeadZone;
+    public PlayerAttack PlayerAttack;
 
     private Vector3 moveDirection;
     private Vector3 lookDirection;
+    private float fire;
 
     // Update is called once per frame
     void Update()
@@ -24,6 +26,7 @@ public class playerMovement : MonoBehaviour
     {
         Move();
         Aim();
+        Fire();
     }
 
     void ProcessInputs()
@@ -35,7 +38,7 @@ public class playerMovement : MonoBehaviour
         float moveY = Input.GetAxis("LeftStickVertical");
 
         //debug
-        //float fire = Input.GetAxisRaw("Fire");
+        fire = Input.GetAxisRaw("Fire");
         //Debug.Log("fire: " + fire);
 
         moveDirection = new Vector3(moveX, moveY, 0);
@@ -63,6 +66,14 @@ public class playerMovement : MonoBehaviour
         {
             lookDirection *= 0.5f;
             reticle.transform.localPosition = lookDirection;
+        }
+    }
+
+    void Fire()
+    {
+        if (fire == 1)
+        {
+            PlayerAttack.Attack(lookDirection);
         }
     }
 }

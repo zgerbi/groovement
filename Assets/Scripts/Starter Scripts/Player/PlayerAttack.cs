@@ -59,17 +59,18 @@ public class PlayerAttack : MonoBehaviour
             {
                 GameObject projectile = Instantiate(weapon.projectile, weapon.shootPosition.position, Quaternion.identity);
                 projectile.GetComponent<Projectile>().SetValues(weapon.duration, weapon.alignmnent, weapon.damageValue);
-                projectile.transform.localScale = new Vector3( projectile.transform.localScale.x * (scale.x / Mathf.Abs(scale.x)), projectile.transform.localScale.y, projectile.transform.localScale.z);
+                //projectile.transform.localScale = new Vector3( projectile.transform.localScale.x * (scale.x / Mathf.Abs(scale.x)), projectile.transform.localScale.y, projectile.transform.localScale.z);
                 //projectile.transform.localScale = new Vector3(projectile.transform.localScale.x, projectile.transform.localScale.y, projectile.transform.localScale.z);
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-                if (player.transform.localScale.x > 0f)
-                {
-                    rb.AddForce(weapon.direction * weapon.force);
-                }
-                else
-                {
-                    rb.AddForce(new Vector2(-1,0) * weapon.force);
-                }
+                //if (player.transform.localScale.x > 0f)
+                //{
+                //    rb.AddForce(weapon.direction * weapon.force);
+                //}
+                //else
+                //{
+                //    rb.AddForce(new Vector2(-1,0) * weapon.force);
+                //}
+                rb.AddForce(scale * weapon.force);
                 
 
 
