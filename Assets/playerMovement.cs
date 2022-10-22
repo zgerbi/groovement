@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour
 
     private Vector3 moveDirection;
     private Vector3 lookDirection;
-    private Vector3 lastLook;
+    private Vector3 lastLook = Vector3.zero;
     private float fire;
 
     // Update is called once per frame
@@ -77,6 +77,10 @@ public class playerMovement : MonoBehaviour
     {
         if (fire == 1)
         {
+            if (lastLook == Vector3.zero)
+            {
+                return;
+            }
             Debug.Log("Look Magnitude: " + lookDirection.magnitude);
             Debug.Log("LastLook Magnitude: " + lastLook.magnitude);
             if (lookDirection.magnitude >= 0.5)

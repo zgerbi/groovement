@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("The max health the player can have")]
     public int maxHealth = 100;
 
+    public GameObject Player;
+
     [Tooltip("The current health the player has")]
     public int currentHealth;
 
@@ -190,9 +192,11 @@ public class PlayerHealth : MonoBehaviour
                     weapon.alignmnent == Weapon.Alignment.Environment)
                 {
                     DecreaseHealth(weapon.damageValue);
+                    Debug.Log("Current health: " + currentHealth);
                     if (currentHealth == 0)
                     {
-                        //playerMovement.TimeToDie();
+                    Player.transform.position = new Vector3(0, 0, 0);
+                    SetUpHealth();
                     }
                 }
             }
@@ -218,9 +222,11 @@ public class PlayerHealth : MonoBehaviour
                     weapon.alignmnent == Weapon.Alignment.Environment)
                 {
                     DecreaseHealth(weapon.damageValue);
+                    Debug.Log("Current health: " + currentHealth);
                     if (currentHealth == 0)
                     {
-                        //playerMovement.TimeToDie();
+                        Player.transform.position = new Vector3(0, 0, 0);
+                        SetUpHealth();
                     }
                 }
             }
