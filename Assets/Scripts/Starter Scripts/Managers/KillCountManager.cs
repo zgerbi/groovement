@@ -13,7 +13,7 @@ public class KillCountManager : MonoBehaviour
     // Start is called before the first frame update
        void Update()
     {
-        killCountText.text = "Defeated " + killScore.ToString();
+        killCountText.text = "Beatdowns: " + killScore.ToString();
     }
     
     public void AddKillCount(int value)
