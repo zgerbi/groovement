@@ -13,6 +13,9 @@ public class MovingPlatform : MonoBehaviour
    void Start()
     {
         nextPosition = startPosition.position;
+        Debug.Log("StartPosition: " + startPosition.position);
+        Debug.Log("position1: " + position1.position);
+        Debug.Log("position2: " + position2.position);
     }
 
     // Update is called once per frame

@@ -81,11 +81,11 @@ public class playerMovement : MonoBehaviour
             {
                 return;
             }
-            Debug.Log("Look Magnitude: " + lookDirection.magnitude);
-            Debug.Log("LastLook Magnitude: " + lastLook.magnitude);
+            //Debug.Log("Look Magnitude: " + lookDirection.magnitude);
+            //Debug.Log("LastLook Magnitude: " + lastLook.magnitude);
             if (lookDirection.magnitude >= 0.5)
             {
-                Debug.Log("shooting in look direction");
+                //Debug.Log("shooting in look direction");
                 PlayerAttack.Attack(lookDirection);
             }
             else
