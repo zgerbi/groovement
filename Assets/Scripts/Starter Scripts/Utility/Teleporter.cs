@@ -15,7 +15,7 @@ public class Teleporter : MonoBehaviour {
     {
         if (trig != null)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 trig.gameObject.transform.position = sp2.gameObject.transform.position;
 
