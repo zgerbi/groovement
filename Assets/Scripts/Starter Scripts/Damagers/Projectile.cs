@@ -126,6 +126,10 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+		if (collision.CompareTag("Wall"))
+        {
+			Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

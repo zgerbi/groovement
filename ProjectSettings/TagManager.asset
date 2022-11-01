@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -40,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: background
     uniqueID: 3200600475
+    locked: 0
+  - name: hazard
+    uniqueID: 2193420389
     locked: 0
   - name: collectible
     uniqueID: 1280288557

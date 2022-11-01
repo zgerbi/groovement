@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7779889311663387104}
   - component: {fileID: 4023668863778208644}
   - component: {fileID: 3849284589103408661}
+  - component: {fileID: 4484819837230454292}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7779889311663387105
 SpriteRenderer:
@@ -159,3 +160,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 0
+--- !u!70 &4484819837230454292
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779889311663387107}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.02}
+  m_Size: {x: 0.1, y: 0.1}
+  m_Direction: 1
