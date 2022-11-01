@@ -7604,10 +7604,10 @@ RectTransform:
   m_Father: {fileID: 1893390836}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 655, y: 315}
-  m_SizeDelta: {x: 238.0325, y: 46.4446}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: 315}
+  m_SizeDelta: {x: 325, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669660715
 MonoBehaviour:
@@ -7672,7 +7672,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -7692,7 +7692,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -130.43506, y: -15.9215975, z: -124.188736, w: -76.423996}
+  m_margin: {x: -130.43506, y: -15.9215975, z: -234.41658, w: -76.423996}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8025,10 +8025,10 @@ RectTransform:
   m_Father: {fileID: 1893390836}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 750, y: 395}
-  m_SizeDelta: {x: 100, y: 5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: 395}
+  m_SizeDelta: {x: 325, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889356281
 MonoBehaviour:
@@ -8093,7 +8093,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -8113,7 +8113,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -130.43506, y: -15.9215975, z: -124.188736, w: -76.423996}
+  m_margin: {x: -130.43506, y: -15.9215975, z: -234.41658, w: -76.423996}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8290,8 +8290,8 @@ RectTransform:
   - {fileID: 1532281951}
   - {fileID: 965006867668175299}
   - {fileID: 1889356280}
-  - {fileID: 561623022}
   - {fileID: 1669660714}
+  - {fileID: 561623022}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
