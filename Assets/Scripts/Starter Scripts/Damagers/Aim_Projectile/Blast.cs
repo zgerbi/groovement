@@ -20,7 +20,7 @@ public class Blast : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("shooting collisiom");
+        //Debug.Log("shooting collisiom");
         // Destroys Projectile On Collision
         //if (other.gameObject.tag == "Enemy")
         //{

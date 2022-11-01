@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
 
     public GameObject Player;
+    public Transform respawnPoint;
+    private Vector3 spawnPoint;
 
     [Tooltip("The current health the player has")]
     public int currentHealth;
@@ -37,6 +39,9 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
        SetUpHealth();
+        //Debug.Log("Respawn.position " + respawnPoint.position);
+        spawnPoint = respawnPoint.position;
+        //Debug.Log("spawnPoint " + spawnPoint);
        //playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -74,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DecreaseHealth(int value)//This is the function to use if you want to decrease the player's health somewhere
     {
-        Debug.Log("Decreasing health");
+        //Debug.Log("Decreasing health");
         if (!useHealthBar)
         {
             SegmentedHealthDecrease(value);
@@ -164,6 +169,7 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthBar()//Updates the health bar according to the new health amounts
     {
+        //Debug.Log(spawnPoint);
         if (useHealthBar)
         {
             float fillAmount = (float)currentHealth / maxHealth;
@@ -179,23 +185,23 @@ public class PlayerHealth : MonoBehaviour
     //This is where we handle the place where the health is dealth with
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Player collided");
+        //Debug.Log("Player collided");
         Collider2D thisCollision = GetComponent<Collider2D>();
         //changed from "otherCollider" to collider
         //if (collision.otherCollider == thisCollision)
         //{
-            Debug.Log("otherCollider == thisCollision");
+            //Debug.Log("otherCollider == thisCollision");
             if (collision.gameObject.TryGetComponent(out Weapon weapon))
             {
-                Debug.Log("weapon is weapon");
+                //Debug.Log("weapon is weapon");
                 if (weapon.alignmnent == Weapon.Alignment.Enemy ||
                     weapon.alignmnent == Weapon.Alignment.Environment)
                 {
                     DecreaseHealth(weapon.damageValue);
-                    Debug.Log("Current health: " + currentHealth);
+                    //Debug.Log("Current health: " + currentHealth);
                     if (currentHealth == 0)
                     {
-                    Player.transform.position = new Vector3(0, 0, 0);
+                    Player.transform.position = spawnPoint;
                     SetUpHealth();
                     }
                 }
@@ -222,10 +228,10 @@ public class PlayerHealth : MonoBehaviour
                     weapon.alignmnent == Weapon.Alignment.Environment)
                 {
                     DecreaseHealth(weapon.damageValue);
-                    Debug.Log("Current health: " + currentHealth);
+                    //Debug.Log("Current health: " + currentHealth);
                     if (currentHealth == 0)
                     {
-                        Player.transform.position = new Vector3(0, 0, 0);
+                        Player.transform.position = spawnPoint;
                         SetUpHealth();
                     }
                 }

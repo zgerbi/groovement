@@ -12,9 +12,11 @@ public class Level_Change : MonoBehaviour
     public bool useGameSceneManager = true;
     void OnTriggerEnter2D(Collider2D other)
     {
+        //Debug.Log("Trigger entered");
         //other.name should equal the root of your Player object
         if (other.tag == "Player")
         {
+            //Debug.Log("Player entered");
             //The scene number to load (in File->Build Settings)
             if (useGameSceneManager)
             {
