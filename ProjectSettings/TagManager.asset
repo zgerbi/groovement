@@ -45,8 +45,14 @@ TagManager:
   - name: background
     uniqueID: 3200600475
     locked: 0
+  - name: floor
+    uniqueID: 2626126959
+    locked: 0
   - name: hazard
     uniqueID: 2193420389
+    locked: 0
+  - name: wall
+    uniqueID: 2095928109
     locked: 0
   - name: collectible
     uniqueID: 1280288557
