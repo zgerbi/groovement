@@ -45,8 +45,14 @@ TagManager:
   - name: background
     uniqueID: 3200600475
     locked: 0
+  - name: raindrops
+    uniqueID: 2360468505
+    locked: 0
   - name: floor
     uniqueID: 2626126959
+    locked: 0
+  - name: particles
+    uniqueID: 86262915
     locked: 0
   - name: hazard
     uniqueID: 2193420389
