@@ -11,6 +11,11 @@ public class GameSceneManager : MonoBehaviour
     [Tooltip("The black screen transition that will be used")]
     public GameObject Transition;
 
+    public Button start;
+    public Button credits;
+    public Button quit;
+    public Button back;
+
     [Tooltip("If you want to open this scene with a fade in")]
     public bool startWithFadeIn = true;
     // Start is called before the first frame update
@@ -20,8 +25,52 @@ public class GameSceneManager : MonoBehaviour
         {
             StartCoroutine(FadeIn());
         }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            splash();
+        }
+
+        if (start)
+            start.onClick.AddListener(newGame);
+        if (credits)
+            credits.onClick.AddListener(creditScreen);
+        if (quit)
+            quit.onClick.AddListener(quitGame);
+        if (back)
+            back.onClick.AddListener(goBack);
     }
 
+    void newGame()
+    {
+        LoadScene(0);
+    }
+
+    void creditScreen()
+    {
+        LoadScene(3);
+    }
+
+    void quitGame()
+    {
+        Application.Quit();
+    }
+
+    void goBack()
+    {
+        LoadScene(2);
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(3);
+        goBack();
+    }
+
+    void splash()
+    {
+        StartCoroutine(waiter());
+    }
 
     //This function should be called to other scripts so that way you have the transition working
     public void LoadScene(int SceneIndex)

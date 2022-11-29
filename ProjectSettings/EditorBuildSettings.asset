@@ -8,7 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/level1.unity
     guid: 2e5093668aec8254a8caaae8006da7cd
-  - enabled: 0
-    path: Assets/Levels/level2.unity
-    guid: 65912efb127eea548a15f6243dc5c7af
+  - enabled: 1
+    path: Assets/Levels/splashScreen.unity
+    guid: 2179728aee47cf04fa886b41b07a7d14
+  - enabled: 1
+    path: Assets/Levels/titleScreen.unity
+    guid: aafd6f0d233c49a428904192cf63d5ac
+  - enabled: 1
+    path: Assets/Levels/credits.unity
+    guid: 3251ebd31ff53e44099ed0e78b10c0d5
+  - enabled: 1
+    path: Assets/Levels/deathScreen.unity
+    guid: bea96e54e4993b24eb07a12d5fa29d73
   m_configObjects: {}

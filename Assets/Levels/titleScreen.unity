@@ -318,14 +318,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 471942493}
         m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
-        m_MethodName: SendMessage
-        m_Mode: 5
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: push me
+          m_StringArgument: quit
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &471942494
@@ -564,14 +564,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 687746941}
         m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
-        m_MethodName: SendMessage
-        m_Mode: 5
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: push me
+          m_StringArgument: credits
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &687746942
@@ -10479,14 +10479,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1524393190}
         m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
-        m_MethodName: SendMessage
-        m_Mode: 5
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: push me
+          m_StringArgument: start
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1524393191
@@ -10578,6 +10578,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transition: {fileID: 1021477507}
+  start: {fileID: 1524393190}
+  credits: {fileID: 687746941}
+  quit: {fileID: 471942493}
+  back: {fileID: 0}
   startWithFadeIn: 1
 --- !u!4 &1605695973
 Transform:
@@ -10606,7 +10610,7 @@ GameObject:
   - component: {fileID: 1669660716}
   - component: {fileID: 1669660715}
   m_Layer: 5
-  m_Name: Kill_Counter
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
