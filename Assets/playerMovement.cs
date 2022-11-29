@@ -68,7 +68,7 @@ public class playerMovement : MonoBehaviour
     {
         if (lookDirection.magnitude > lookDeadZone)
         {
-            lookDirection *= 0.5f;
+            //lookDirection *= 0.5f;
             reticle.transform.localPosition = lookDirection;
         }
     }
