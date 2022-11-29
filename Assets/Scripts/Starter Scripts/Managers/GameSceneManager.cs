@@ -26,7 +26,7 @@ public class GameSceneManager : MonoBehaviour
             StartCoroutine(FadeIn());
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 4)
         {
             splash();
         }
@@ -43,7 +43,7 @@ public class GameSceneManager : MonoBehaviour
 
     void newGame()
     {
-        LoadScene(0);
+        LoadScene(1);
     }
 
     void creditScreen()

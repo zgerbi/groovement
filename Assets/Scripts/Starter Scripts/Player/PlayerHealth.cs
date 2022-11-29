@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
 
     public GameObject Player;
+    public GameSceneManager sm;
     public Transform respawnPoint;
     private Vector3 spawnPoint;
 
@@ -201,8 +202,11 @@ public class PlayerHealth : MonoBehaviour
                     //Debug.Log("Current health: " + currentHealth);
                     if (currentHealth == 0)
                     {
-                    Player.transform.position = spawnPoint;
-                    SetUpHealth();
+                    //sm.LoadScene(4);
+                    //sm.splash();
+                    sm.LoadScene(4);
+                    //Player.transform.position = spawnPoint;
+                    //SetUpHealth();
                     }
                 }
             }
