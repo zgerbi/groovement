@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public Camera cam;
+    public PlayerAudio playerAudio;
     public float moveSpeed;
     public Rigidbody2D rb;
     public GameObject reticle;
@@ -16,6 +17,39 @@ public class playerMovement : MonoBehaviour
     private Vector3 lookDirection;
     private Vector3 lastLook = Vector3.zero;
     private float fire;
+
+    private void Start()
+    {
+        playerAudio = GetComponent<PlayerAudio>();
+        PlayerAttack = GetComponent<PlayerAttack>();
+    }
+
+    void HandleMoveAudio(bool isMoving)
+    {
+        if (isMoving && !playerAudio.WalkSource.isPlaying)
+        {
+
+            Debug.Log("moving");
+            playerAudio.WalkSource.Play();
+        }
+        else if (!isMoving && playerAudio.WalkSource.isPlaying)
+        {
+            Debug.Log("stopping");
+            playerAudio.WalkSource.Pause();
+        }
+    }
+
+    void HandleAttackAudio()
+    {
+        if (!playerAudio.AttackSource.isPlaying) { 
+            playerAudio.AttackSource.Play();
+        }
+        else
+        {
+            playerAudio.AttackSource.Stop();
+            playerAudio.AttackSource.Play();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -55,6 +89,11 @@ public class playerMovement : MonoBehaviour
         if (new Vector3(moveX, moveY, 0).magnitude < inputDeadZone)
         {
             moveDirection = Vector3.zero;
+            HandleMoveAudio(false);
+        }
+        else
+        {
+            HandleMoveAudio(true);
         }
         
     }
@@ -86,11 +125,17 @@ public class playerMovement : MonoBehaviour
             if (lookDirection.magnitude >= 0.5)
             {
                 //Debug.Log("shooting in look direction");
-                PlayerAttack.Attack(lookDirection);
+                if (PlayerAttack.Attack(lookDirection))
+                {
+                    HandleAttackAudio();
+                }
             }
             else
-            {
-                PlayerAttack.Attack(lastLook);
+            { 
+                if (PlayerAttack.Attack(lastLook))
+                {
+                    HandleAttackAudio();
+                }
             }
         }
     }

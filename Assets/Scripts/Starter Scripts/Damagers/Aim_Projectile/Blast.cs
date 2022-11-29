@@ -7,14 +7,14 @@ public class Blast : MonoBehaviour
 {
     public float speed = 20f;
     public Rigidbody2D rb;
-    EnergyBlaster eb;
+    //EnergyBlaster eb;
     public int damage = 20;
-    private int count;
+    //private int count;
 
     public Vector2 path;
     void Start()
     {
-        count = 0;
+        //count = 0;
         rb.velocity = path * speed;
     }
 

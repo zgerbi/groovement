@@ -46,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void Attack(Vector3 scale)
+    public bool Attack(Vector3 scale)
     {
         //This is where the weapon is rotated in the right direction that you are facing
         if (weapon && canAttack)
@@ -74,9 +74,11 @@ public class PlayerAttack : MonoBehaviour
                 rb.AddForce(scale * weapon.force);
 
             }
-
+            
             StartCoroutine(CoolDown());
+            return true;
         }
+        return false;
     }
 
     public void StopAttack()
