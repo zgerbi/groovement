@@ -8,7 +8,7 @@ public class enemyChase : MonoBehaviour
     public float speed = 6f;
     public Rigidbody2D rb;
 
-    private float range = 10f;
+    private float range = 10000f;
     // Start is called before the first frame update
     void Start()
     {

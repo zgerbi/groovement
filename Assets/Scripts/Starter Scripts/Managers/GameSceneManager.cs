@@ -26,7 +26,7 @@ public class GameSceneManager : MonoBehaviour
             StartCoroutine(FadeIn());
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 4)
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 5)
         {
             splash();
         }

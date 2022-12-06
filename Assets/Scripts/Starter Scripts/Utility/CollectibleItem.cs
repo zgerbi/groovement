@@ -9,6 +9,7 @@ public class CollectibleItem : MonoBehaviour
     public bool isCollectible = false;
     public int collectibleValue = 1;
     private CollectibleManager cManager;
+    public PlayerHealth playerhealth;
 
     //This component is placed on any object that is a keyItem pick up and to be placed in your "inventory"
 
@@ -30,6 +31,7 @@ public class CollectibleItem : MonoBehaviour
             {
                 cManager.Collected(collectibleValue);
                 Destroy(gameObject);
+                playerhealth.IncreaseHealth(1);
 
             }
 
