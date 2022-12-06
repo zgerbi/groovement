@@ -19,7 +19,7 @@ public class persistence : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        if (killcount >= 3)
+        if (killcount >= 50)
         {
             sm.LoadScene(5);
         }
