@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 //A script by Michael O'Connell, extended by Benjamin Cohen
 
@@ -10,7 +11,7 @@ using TMPro;
 public class DialogueTrigger : MonoBehaviour
 {
     //Attach this script to an empty gameobject with a 2D collider set to trigger
-    TMP_Text tutorialText;
+    public TMP_Text tutorialText;
     DialogueManager manager;
     public TextAsset TextFileAsset; // your imported text file for your NPC
     private Queue<string> dialogue = new Queue<string>(); // stores the dialogue (Great Performance!)
@@ -109,6 +110,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             manager.EndDialogue();
+            persistence.instance.finishedTutorial();
         }
         inArea = false;
 

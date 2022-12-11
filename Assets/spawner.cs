@@ -15,7 +15,7 @@ public class spawner : MonoBehaviour
     private float xmin, xmax, ymin, ymax;
 
     private bool waited = false;
-    private int waitTime = 500;
+    //private int waitTime = 500;
 
     // Start is called before the first frame update
     void Start()
@@ -29,23 +29,14 @@ public class spawner : MonoBehaviour
 
     void FixedUpdate()
     {
-        counter += 1;
-
-        if (waited)
+        if (persistence.instance.completed())
         {
+            counter += 1;
             //Debug.Log(counter);
             if (counter >= interval)
             {
                 counter = 0;
                 Spawn();
-            }
-        }
-        else
-        {
-            if (counter >= waitTime)
-            {
-                waited = true;
-                counter = 0;
             }
         }
     }

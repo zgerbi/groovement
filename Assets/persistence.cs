@@ -43,4 +43,9 @@ public class persistence : MonoBehaviour
     {
         tutorialDone = true;
     }
+
+    public bool completed()
+    {
+        return tutorialDone;
+    }
 }
