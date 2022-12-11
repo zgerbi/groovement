@@ -1,4 +1,6 @@
 [NAME=Club Owner][SPEAKERSPRITE=NPC]Yo, great set! The fans look rabid, I'd keep my distance if I were you...
-[NAME=Club Owner][SPEAKERSPRITE=NPC]Take this... erm, "crowd control device". If you can clear out 50 of 'em, I'll give you that juicy opening spot next month!
-[NAME=Club Owner][SPEAKERSPRITE=NPC]Use the right trigger to fire. You've figured out the movement well enough, but if you see any radical portals around, you can use the A button to jump through!
+[NAME=Club Owner][SPEAKERSPRITE=NPC]Take this! If you can clear em out, I'll give you that juicy opening spot next month!
+[NAME=Club Owner][SPEAKERSPRITE=NPC]Left stick is move, and use the right trigger to fire. If you see any portals around, you can use the A button to jump through!
+[NAME=Club Owner][SPEAKERSPRITE=NPC]Collect any eighth notes you see around; every 50 levels you up, which means you get healed and your bullets get bigger.
+[NAME=Club Owner][SPEAKERSPRITE=NPC]Go get 'em, tiger.
 [NAME=Player][SPEAKERSPRITE=Player]Can do!

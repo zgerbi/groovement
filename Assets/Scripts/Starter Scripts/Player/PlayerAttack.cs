@@ -59,6 +59,7 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 GameObject projectile = Instantiate(weapon.projectile, weapon.shootPosition.position, Quaternion.identity);
+                projectile.transform.localScale = new Vector3((float)(1 + 0.25 * persistence.instance.level), 1, 1);
                 projectile.GetComponent<Projectile>().SetValues(weapon.duration, weapon.alignmnent, weapon.damageValue);
                 //projectile.transform.localScale = new Vector3( projectile.transform.localScale.x * (scale.x / Mathf.Abs(scale.x)), projectile.transform.localScale.y, projectile.transform.localScale.z);
                 //projectile.transform.localScale = new Vector3(projectile.transform.localScale.x, projectile.transform.localScale.y, projectile.transform.localScale.z);

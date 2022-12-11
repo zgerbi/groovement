@@ -8,9 +8,10 @@ using System;
 public class persistence : MonoBehaviour
 {
     public static persistence instance;
-    public int killcount, collected;
+    public int killcount, collected, level;
     public GameSceneManager sm;
     public TMP_Text col;
+    private bool tutorialDone = false;
 
     private void Update()
     {
@@ -19,7 +20,8 @@ public class persistence : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        if (killcount >= 50)
+        ///TODO: Change this to a level check or a higher kill check
+        if (killcount >= 500)
         {
             sm.LoadScene(5);
         }
@@ -35,5 +37,10 @@ public class persistence : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void finishedTutorial()
+    {
+        tutorialDone = true;
     }
 }

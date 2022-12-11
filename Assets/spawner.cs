@@ -14,6 +14,9 @@ public class spawner : MonoBehaviour
     private Vector3[] corners = new Vector3[4];
     private float xmin, xmax, ymin, ymax;
 
+    private bool waited = false;
+    private int waitTime = 500;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +30,23 @@ public class spawner : MonoBehaviour
     void FixedUpdate()
     {
         counter += 1;
-        //Debug.Log(counter);
-        if (counter>=interval)
+
+        if (waited)
         {
-            counter = 0;
-            Spawn();
+            //Debug.Log(counter);
+            if (counter >= interval)
+            {
+                counter = 0;
+                Spawn();
+            }
+        }
+        else
+        {
+            if (counter >= waitTime)
+            {
+                waited = true;
+                counter = 0;
+            }
         }
     }
 

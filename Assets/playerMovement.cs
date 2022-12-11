@@ -29,12 +29,12 @@ public class playerMovement : MonoBehaviour
         if (isMoving && !playerAudio.WalkSource.isPlaying)
         {
 
-            Debug.Log("moving");
+            //Debug.Log("moving");
             playerAudio.WalkSource.Play();
         }
         else if (!isMoving && playerAudio.WalkSource.isPlaying)
         {
-            Debug.Log("stopping");
+            //Debug.Log("stopping");
             playerAudio.WalkSource.Pause();
         }
     }
