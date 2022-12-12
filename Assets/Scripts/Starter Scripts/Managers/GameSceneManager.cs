@@ -59,7 +59,7 @@ public class GameSceneManager : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         goBack();
     }
 
