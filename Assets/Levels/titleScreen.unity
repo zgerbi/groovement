@@ -10582,7 +10582,7 @@ MonoBehaviour:
   credits: {fileID: 687746941}
   quit: {fileID: 471942493}
   back: {fileID: 0}
-  startWithFadeIn: 1
+  startWithFadeIn: 0
 --- !u!4 &1605695973
 Transform:
   m_ObjectHideFlags: 0

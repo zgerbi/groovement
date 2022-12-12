@@ -9738,23 +9738,23 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d8e870e8b5000434aa7f73d54174bfa8, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_audioClip: {fileID: 8300000, guid: 00e5256a871c2134e9ab74cde4a17e5f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.51
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -9784,7 +9784,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9873,7 +9873,7 @@ MonoBehaviour:
   credits: {fileID: 0}
   quit: {fileID: 0}
   back: {fileID: 0}
-  startWithFadeIn: 1
+  startWithFadeIn: 0
 --- !u!4 &1605695973
 Transform:
   m_ObjectHideFlags: 0

@@ -17,15 +17,10 @@ public class GameSceneManager : MonoBehaviour
     public Button back;
 
     [Tooltip("If you want to open this scene with a fade in")]
-    public bool startWithFadeIn = true;
+    public bool startWithFadeIn = false;
     // Start is called before the first frame update
     void Start()
     {
-        if (startWithFadeIn)
-        {
-            StartCoroutine(FadeIn());
-        }
-
         if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 5)
         {
             splash();
@@ -64,7 +59,7 @@ public class GameSceneManager : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(3f);
         goBack();
     }
 
@@ -77,7 +72,7 @@ public class GameSceneManager : MonoBehaviour
     //This function should be called to other scripts so that way you have the transition working
     public void LoadScene(int SceneIndex)
     {
-        StartCoroutine(FadeOut());
+        //StartCoroutine(FadeOut());
         StartCoroutine(LoadAsyncScene(SceneIndex));
     }
 
