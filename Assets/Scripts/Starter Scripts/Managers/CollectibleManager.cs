@@ -17,13 +17,13 @@ public class CollectibleManager : MonoBehaviour
     {
         persistence.instance.collected = 0;
         collected = 0;
-        persistence.instance.level = 4;
+        persistence.instance.level = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        collectibles.text = "Beats:\t\t\t\t\t\t\t\t" + collected + "/50";
+        collectibles.text = "Beats:\t\t\t\t\t\t\t" + collected + "/50";
 
         if (collected >= 50)
         {
