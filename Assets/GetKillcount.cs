@@ -12,7 +12,7 @@ public class GetKillcount : MonoBehaviour
     void Start()
     {
         kills = persistence.instance.killcount;
-        tmp.text = "Beats collected: " + kills;
+        tmp.text = "Beatdowns given: " + kills;
     }
 
     // Update is called once per frame
