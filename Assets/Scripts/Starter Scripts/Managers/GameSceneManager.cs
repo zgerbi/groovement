@@ -43,6 +43,7 @@ public class GameSceneManager : MonoBehaviour
 
     void newGame()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<musicPlayer>().stopPlay();
         LoadScene(1);
     }
 
@@ -63,12 +64,13 @@ public class GameSceneManager : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4.5f);
         goBack();
     }
 
     void splash()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<musicPlayer>().startPlay();
         StartCoroutine(waiter());
     }
 

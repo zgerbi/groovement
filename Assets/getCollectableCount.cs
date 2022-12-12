@@ -11,6 +11,7 @@ public class getCollectableCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<musicPlayer>().stopPlay();
         coll = persistence.instance.collected;
         tmp.text = "Beats collected: " + coll;
     }
