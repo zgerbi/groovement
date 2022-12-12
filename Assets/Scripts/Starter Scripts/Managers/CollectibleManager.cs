@@ -15,10 +15,9 @@ public class CollectibleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //TODO: change back to 0 after debug
-        persistence.instance.collected = 49;
-        collected = 49;
-        persistence.instance.level = 0;
+        persistence.instance.collected = 0;
+        collected = 0;
+        persistence.instance.level = 4;
     }
 
     // Update is called once per frame

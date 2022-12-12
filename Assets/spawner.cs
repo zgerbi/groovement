@@ -14,7 +14,7 @@ public class spawner : MonoBehaviour
     private Vector3[] corners = new Vector3[4];
     private float xmin, xmax, ymin, ymax;
 
-    private bool waited = false;
+    //private bool waited = false;
     //private int waitTime = 500;
 
     // Start is called before the first frame update
@@ -43,12 +43,12 @@ public class spawner : MonoBehaviour
 
     void Spawn()
     {
-        Debug.Log("Spawning");
+        //Debug.Log("Spawning");
         Vector3 spawnpos = new Vector3(Random.Range(xmin, xmax), Random.Range(ymin, ymax), 0);
-        Debug.Log(Vector3.Distance(player.transform.position, spawnpos));
+        //Debug.Log(Vector3.Distance(player.transform.position, spawnpos));
         if (Vector3.Distance(player.transform.position, spawnpos) >= radius)
         {
-            Debug.Log("Spawned!");
+            //Debug.Log("Spawned!");
             Instantiate(enemy, spawnpos, new Quaternion());
         }
     }

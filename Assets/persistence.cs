@@ -20,8 +20,7 @@ public class persistence : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        ///TODO: Change this to a level check or a higher kill check
-        if (killcount >= 500)
+        if (killcount >= 250)
         {
             sm.LoadScene(5);
         }

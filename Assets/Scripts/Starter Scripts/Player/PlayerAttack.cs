@@ -58,20 +58,11 @@ public class PlayerAttack : MonoBehaviour
 
             else
             {
-                GameObject projectile = Instantiate(weapon.projectile, weapon.shootPosition.position, Quaternion.identity);
-                projectile.transform.localScale = new Vector3((float)(1 + 0.25 * persistence.instance.level), 1, 1);
+                float angle = -(Mathf.Atan2(scale.x, scale.y) * Mathf.Rad2Deg);
+                GameObject projectile = Instantiate(weapon.projectile, weapon.shootPosition.position, Quaternion.AngleAxis(angle, Vector3.forward));
+                projectile.transform.localScale = new Vector3((float)(1 + 0.8 * persistence.instance.level), (float)(1+0.5*persistence.instance.level), 1);
                 projectile.GetComponent<Projectile>().SetValues(weapon.duration, weapon.alignmnent, weapon.damageValue);
-                //projectile.transform.localScale = new Vector3( projectile.transform.localScale.x * (scale.x / Mathf.Abs(scale.x)), projectile.transform.localScale.y, projectile.transform.localScale.z);
-                //projectile.transform.localScale = new Vector3(projectile.transform.localScale.x, projectile.transform.localScale.y, projectile.transform.localScale.z);
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-                //if (player.transform.localScale.x > 0f)
-                //{
-                //    rb.AddForce(weapon.direction * weapon.force);
-                //}
-                //else
-                //{
-                //    rb.AddForce(new Vector2(-1,0) * weapon.force);
-                //}
                 rb.AddForce(scale * weapon.force);
 
             }
@@ -108,7 +99,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator CoolDown()
     {
         canAttack = false;
-        yield return new WaitForSeconds(coolDown);
+        yield return new WaitForSeconds(coolDown - (float)(0.03 * persistence.instance.level));
         canAttack = true;
     }
 }

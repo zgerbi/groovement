@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
     public int damageValue;
 
     [Header("For Both Melee & Range")]
-    public Collider2D collider;
+    public Collider2D thisCollider;
 
     [Header("Only for Ranged Weapon")]
     public GameObject projectile;
@@ -41,12 +41,12 @@ public class Weapon : MonoBehaviour
 
     public void WeaponStart()
     {
-        collider.enabled = true;
+        thisCollider.enabled = true;
     }
 
     public void WeaponFinished()
     {
-        collider.enabled = false;
+        thisCollider.enabled = false;
     }
 
 
